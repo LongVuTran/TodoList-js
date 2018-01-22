@@ -67,7 +67,7 @@ function AllDone() {
 
     // add to done
     for (i = 0; i < myArray.length; i++) {
-        $('#done-items').append('<li>' + myArray[i] + '<button class="btn btn-default btn-xs pull-right  remove-item"><span class="glyphicon glyphicon-remove"></span></button></li>');
+        $('#done-items').append('<li>' + myArray[i] + '<button class="btn btn-default btn-xs pull-right  remove-item"><i class="icon-remove"></i></button></li>');
     }
 
     // myArray
