@@ -52,7 +52,7 @@ function createTodo(text) {
 //mark task as done
 function done(doneItem) {
     var done = doneItem;
-    var markup = '<li>' + done + '<button class="btn btn-default btn-xs pull-right  remove-item"><span class="glyphicon glyphicon-remove"></span></button></li>';
+    var markup = '<li>' + done + '<button class="btn btn-default btn-xs pull-right  remove-item"><i class="icon-remove"></i></button></li>';
     $('#done-items').append(markup);
     $('.remove').remove();
 }
