@@ -1,5 +1,5 @@
-$("#sortable").sortable();
-$("#sortable").disableSelection();
+// $("#sortable").sortable();
+// $("#sortable").disableSelection();
 
 countTodos();
 
