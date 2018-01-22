@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TodoList-js</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.0.4/web-fonts-with-css/css/fontawesome.min.css">
+
+</head>
+
+<body>
+
+    <div class="row navbar-top">
+        <div class="col-md-2 brand">
+            <a class="navbar-brand" href="#">Admin</a>
+        </div>
+        <div class="col-md-10">
+            <nav class="navbar navbar-expand-lg bar-title">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="form-inline ml-auto">
+                    <a href="#" class="admin-img rounded-circle"><img class="rounded-circle" src="images/Norway.jpg" alt=""></a>
+                    <a href="#"><img src="images/icon_account.png" alt="account"></a>
+                    <p>Vu Tran</p>
+                </form>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2 title-action">
+            <div class="form-inline profile">
+                <a href="#" class="admin-img rounded-circle"><img class="rounded-circle" src="images/Norway.jpg" alt=""></a>
+                <p>Vu Tran</p>
+            </div>
+            <div class="list-group">
+                <h5>Action</h5>
+                <a class="list-group-item" href="#">Refresh</a>
+                <a class="list-group-item" href="#">Add a new list</a>
+                <a class="list-group-item" href="#">Edit current list</a>
+                <a class="list-group-item" href="#">Share current list</a>
+                <a class="list-group-item" href="#">Delete current list</a>
+            </div>
+
+            <div class="list-group">
+                <h5>Tasklist</h5>
+                <a class="list-group-item" href="#">Important</a>
+                <a class="list-group-item" href="#">Warming</a>
+                <a class="list-group-item" href="#">Infomation</a>
+                <a class="list-group-item" href="#">Selected list</a>
+            </div>
+        </div>
+        <div class="col-md-10 ">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="todolist not-done">
+                        <h1>Todos</h1>
+                        <input type="text" class="form-control add-todo" placeholder="Add todo">
+                        <button id="checkAll" class="btn btn-success">Mark all as done</button>
+
+                        <hr>
+                        <ul id="sortable" class="list-unstyled">
+                            <li class="ui-state-default">
+                                <div class="checkbox">
+                                    <label>
+                                <input type="checkbox" value="" />Take out the trash</label>
+                                </div>
+                            </li>
+                            <li class="ui-state-default">
+                                <div class="checkbox">
+                                    <label>
+                                <input type="checkbox" value="" />Buy bread</label>
+                                </div>
+                            </li>
+                            <li class="ui-state-default">
+                                <div class="checkbox">
+                                    <label>
+                                <input type="checkbox" value="" />Teach penguins to fly</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="todo-footer">
+                            <strong><span class="count-todos"></span></strong> Items Left
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="todolist">
+                        <h1>Already Done</h1>
+                        <ul id="done-items" class="list-unstyled">
+                            <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js "></script>
+</body>
+
+</html>
