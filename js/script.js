@@ -1,7 +1,7 @@
 // $("#sortable").sortable();
 // $("#sortable").disableSelection();
 
-countTodos();
+// countTodos();
 
 // all done btn
 $("#checkAll").click(function() {
