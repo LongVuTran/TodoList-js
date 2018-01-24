@@ -8,14 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/sign-up.css">
 </head>
 
 <body>
 
-    <div id="signup">
-        <!-- <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> -->
+    <div id="signup" class="modal">
         <form class="modal-content">
             <div class="container">
                 <h1>Sign Up</h1>
@@ -38,15 +36,14 @@
 
                 <div class="clearfix">
                     <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn">Cancel</button>
-                    <button type="button" class="signupbtn">Sign Up</button>
+                    <button type="button" id="signupbtn" onclick="signUp()">Sign Up</button>
                 </div>
             </div>
         </form>
     </div>
 
-
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/sign-in.js"></script>
+    <script src="js/sign-up.js"></script>
 </body>
 
 </html>

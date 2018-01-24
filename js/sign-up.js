@@ -1,10 +1,10 @@
-function signIn() {
+function signUp() {
     var email_account = $("#email").val();
     var password_account = $("#password").val();
 
     var request = $.ajax({
         type: 'POST',
-        url: "https://todo-js-be.herokuapp.com/auth/sign_in",
+        url: "https://todo-js-be.herokuapp.com/auth",
         crossDomain: true,
         data: {
             "email": email_account,

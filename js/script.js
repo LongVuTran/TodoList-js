@@ -10,7 +10,7 @@ $("#checkAll").click(function() {
 
 //create todo
 $('.add-todo').on('keypress', function(e) {
-    e.preventDefault
+    e.preventDefault()
     if (e.which == 13) {
         if ($(this).val() != '') {
             var todo = $(this).val();
