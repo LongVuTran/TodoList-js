@@ -3,7 +3,7 @@ function signUp() {
     var password_account = $("#password").val();
 
     var request = $.ajax({
-        type: 'POST',
+        type: "POST",
         url: "https://todo-js-be.herokuapp.com/auth",
         crossDomain: true,
         data: {
@@ -14,7 +14,6 @@ function signUp() {
 
     request.done(function(data) {
         console.log(data);
-        console.log("success");
     });
 
     request.fail(function(jqXHR, textStatus) {
