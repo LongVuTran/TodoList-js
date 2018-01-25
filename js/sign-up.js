@@ -20,3 +20,16 @@ function signUp() {
         console.log("error");
     });
 }
+
+// $(document).ready(function() {
+//     $("#homePage").load("./index.html");
+// });
+
+// $("#cancel").click(function() {
+//     console.log("abcasdfads");
+//     $("#homePage").load("./index.html");
+// });
+
+function cancel(event) {
+    document.location.href = "./index.html";
+}

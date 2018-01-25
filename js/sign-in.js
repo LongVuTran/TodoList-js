@@ -5,7 +5,6 @@ function signIn() {
     var request = $.ajax({
         type: "POST",
         url: "https://todo-js-be.herokuapp.com/auth/sign_in",
-        // crossDomain: true,
         data: {
             "email": email_account,
             "password": password_account
@@ -13,7 +12,7 @@ function signIn() {
     });
 
     request.done(function(data) {
-        console.log("success");
+        alert("Wellcome to TodoList!\nYou are login!");
         console.log(data);
     });
 
@@ -22,20 +21,6 @@ function signIn() {
     });
 }
 
-// function getSuccessOutput() {
-//     $.ajax({
-//         type: "POST",
-//         url: "https://todo-js-be.herokuapp.com/auth/sign_in",
-//         data: {
-//             "email": "traoantam@gmail.com",
-//             "password": "12345678"
-//         },
-//         complete: function(response) {
-//             $('#output').html(response.responseText);
-//         },
-//         error: function() {
-//             $('#output').html('bummer: there was an error');
-//         },
-//     });
-//     return false;
-// }
+function cancel(event) {
+    document.location.href = "./index.html";
+}
