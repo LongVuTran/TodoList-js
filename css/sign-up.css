@@ -111,3 +111,8 @@ hr {
 #signupbtn {
     width: 50%;
 }
+
+label {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

@@ -16,6 +16,10 @@ function signIn() {
         console.log(data);
     });
 
+    request.done(function(data, textStatus, jqXHR) {
+        var uid = jqXHR.getResponseHeader("Uid", "");
+    });
+
     request.fail(function(jqXHR, textStatus) {
         console.log("error");
     });
