@@ -1,33 +1,70 @@
-function signUp() {
-    var email_account = $("#email").val();
-    var password_account = $("#password").val();
-    var rePassword_account = $("rePassword").val();
+$(document).ready(function() {
+    $("#signupbtn").click(function() {
+        var lastname_account = $("#last_name").val();
+        var firstname_account = $("#first_name").val();
+        var email_account = $("#email").val();
+        var password_account = $("#password").val();
+        var rePassword_account = $("rePassword").val();
 
-    if (rePassword_account != password_account) {
-        alert("Please check your password or email.\nTry again!");
-        document.location.href = "./sign-up.html";
-    }
+        var request = $.ajax({
+            type: "POST",
+            url: "https://todo-js-be.herokuapp.com/auth",
+            crossDomain: true,
+            data: {
+                "last_name": lastname_account,
+                "first_name": firstname_account,
+                "email": email_account,
+                "password": password_account
+            }
+        });
 
-    var request = $.ajax({
-        type: "POST",
-        url: "https://todo-js-be.herokuapp.com/auth",
-        crossDomain: true,
-        data: {
-            "email": email_account,
-            "password": password_account
-        }
+        request.done(function(data) {
+            console.log(data);
+        });
+
+        request.fail(function(jqXHR, textStatus) {
+            console.log("error");
+        });
     });
-
-    request.done(function(data) {
-        console.log(data);
-
+    
+    $("#cancelbtn").click(function() {
+        window.location.href = "./index.html";
     });
+});
 
-    request.fail(function(jqXHR, textStatus) {
-        console.log("error");
-    });
-}
+// function validateForm() {
+//     var x = document.forms["signUpForm"].value;
+//     if (x == "") {
+//         alert("You must be filled out!");
+//         return fasle;
+//     }
+// }
 
-function cancel(event) {
-    document.location.href = "./index.html";
-}
+// $(function() {
+//     $("form[name=signUpForm]").validate({
+//         rules:{
+//             firstname: "required",
+//             lastname: "required",
+//             email: { 
+//                 required: true,
+//                 email: true
+//             },
+//             password: {
+//                 required: true,
+//                 minlength: 8
+//             },
+//         }
+//         messages: {
+//             firstname: "Please enter your firstname",
+//             lastname: "Please enter your lastname",
+//             password: {
+//                 required: "Please provide a password",
+//                 minlength: "Your password must be at least 5 characters long"
+//             },
+//             email: "Please enter a valid email address"
+//         }
+//         submitHandler: function(form) {
+//             form.submit();
+//         }
+//     });
+// });

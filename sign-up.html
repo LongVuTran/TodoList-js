@@ -14,34 +14,35 @@
 <body>
 
     <div id="signup" class="modal">
-        <form class="modal-content">
+        <form id="signUpForm" name="signUpForm" class="modal-content">
             <div class="container">
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
                 <hr>
-                <div class="row">
-                    <label class="col-md-2"><b>Last name *</b></label>
-                    <input class="col-md-9" id="lastname" type="text" placeholder="Last name">
-                </div>
 
                 <div class="row">
                     <label class="col-md-2"><b>First name *</b></label>
-                    <input class="col-md-9" id="firstname" type="text" placeholder="First name">
+                    <input class="col-md-9" id="firstname" type="text" placeholder="First name" name="fname" required>
+                </div>
+
+                <div class="row">
+                    <label class="col-md-2"><b>Last name *</b></label>
+                    <input class="col-md-9" id="lastname" type="text" placeholder="Last name" name="fname" required>
                 </div>
 
                 <div class="row">
                     <label class="col-md-2"><b>Email</b></label>
-                    <input class="col-md-9" id="email" type="text" placeholder="Enter Email" name="email" required>
+                    <input class="col-md-9" id="email" type="text" placeholder="Enter Email" name="fname" required>
                 </div>
 
                 <div class="row">
                     <label class="col-md-2"><b>Password *</b></label>
-                    <input class="col-md-9" id="password" type="password" placeholder="Enter Password" name="psw">
+                    <input class="col-md-9" id="password" type="password" placeholder="Enter Password" name="fname" required>
                 </div>
 
                 <div class="row">
-                    <label class="col-md-2"><b>Repeat Password *</b></label>
-                    <input class="col-md-9" id="rePassword" type="password" placeholder="Repeat Password" name="psw-repeat">
+                    <label class="col-md-2"><b>Repeat Password*</b></label>
+                    <input class="col-md-9" id="rePassword" type="password" placeholder="Repeat Password" name="fname" required> 
                 </div>
 
                 <div class="row">
@@ -52,8 +53,8 @@
                 </div>
 
                 <div class="clearfix">
-                    <button onclick="cancel()" type="button" class="cancelbtn">Cancel</button>
-                    <button type="button" id="signupbtn" onclick="signUp()">Sign Up</button>
+                    <button id="cancelbtn" type="button" class="cancelbtn">Cancel</button>
+                    <button type="button" id="signupbtn">Sign Up</button>
                 </div>
             </div>
         </form>
