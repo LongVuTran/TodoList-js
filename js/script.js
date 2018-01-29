@@ -5,3 +5,4 @@ function signInPage() {
 function signUpPage() {
     document.location.href = "./sign-up.html";
 }
+

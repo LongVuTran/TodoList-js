@@ -1,35 +1,37 @@
 $(document).ready(function(){
     $("#loginbtn").click(function(){
-        var email_account = $("#email").val();
-        var password_account = $("#password").val();
+        if ($("#loginForm").valid()) {
+            var email_account = $("#email").val();
+            var password_account = $("#password").val();
 
-        var request = $.ajax({
-            type: "POST",
-            url: "https://todo-js-be.herokuapp.com/auth/sign_in",
-            data: {
-                "email": email_account,
-                "password": password_account
-            }
-        });
+            var request = $.ajax({
+                type: "POST",
+                url: "https://todo-js-be.herokuapp.com/auth/sign_in",
+                data: {
+                    "email": email_account,
+                    "password": password_account
+                }
+            });
 
-        request.done(function(data, textStatus, jqXHR) {
-            var uId = jqXHR.getResponseHeader("Uid");
-            var accessToken = jqXHR.getResponseHeader("Access-Token");
-            var client = jqXHR.getResponseHeader("Client");
-            
-            setCookie("uId", uId);
-            setCookie("accessToken", accessToken);
-            setCookie("client", client);
+            request.done(function(data, textStatus, jqXHR) {
+                var uId = jqXHR.getResponseHeader("Uid");
+                var accessToken = jqXHR.getResponseHeader("Access-Token");
+                var client = jqXHR.getResponseHeader("Client");
 
-            alert("Wellcome to TodoList!\nYou are login!");
-            console.log(data);
-        });
+                localStorage.setItem('uId', 'accessToken', 'client');
 
-        request.fail(function(jqXHR, textStatus, errorThrown) {
-            console.log("error");
-            var error = jqXHR.responseJSON.errors[0];
-            alert(error);
-        });
+                alert("Wellcome to TodoList!\nYou are login!");
+                console.log(data);
+            });
+
+            request.fail(function(jqXHR, textStatus, errorThrown) {
+                console.log("error");
+                var error = jqXHR.responseJSON.errors[0];
+                alert(error);
+            });
+
+            window.location.href = "./home.html";
+        }
     });
     
     $("#cancelbtn").click(function() {
