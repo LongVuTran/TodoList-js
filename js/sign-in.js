@@ -18,7 +18,18 @@ $(document).ready(function(){
                 var accessToken = jqXHR.getResponseHeader("Access-Token");
                 var client = jqXHR.getResponseHeader("Client");
 
-                localStorage.setItem('uId', 'accessToken', 'client');
+                // setCookie("uId", uId);
+                // setCookie("accessToken", accessToken);
+                // setCookie("client", client);
+                
+                localStorage.setItem('uId', uId);
+                localStorage.setItem('accessToken', accessToken)
+                localStorage.setItem('client', client);
+
+                console.log(localStorage);
+
+
+                window.location.href = "./home.html"; 
 
                 alert("Wellcome to TodoList!\nYou are login!");
                 console.log(data);
@@ -29,46 +40,19 @@ $(document).ready(function(){
                 var error = jqXHR.responseJSON.errors[0];
                 alert(error);
             });
-
-            window.location.href = "./home.html";
         }
     });
     
+    //direct to index.html
     $("#cancelbtn").click(function() {
         window.location.href = "./index.html";
     });
 
-    $("#loginForm").validate({
-        rules: {
-            'email': {
-                required: true,
-                email: true
-            },
-            'password': {
-                required: true,
-                minlength: 8
-            }
-        },
 
-        messages: {
-            'first_name': {
-                required: "First name must be filled out!"
-            },
-            'last_name': {
-                required: "Last name must be filled out!"
-            },
-            'email': {
-                required: "Email must be filled out!",
-                email: "Email is incorect"
-            },
-            'password': {
-                required: "Password must be filled out!",
-                minlength: "At least 8 letters"
-            },
-            'repeat_password': {
-                required: "Repeat password must be filled out",
-                equalTo: "Repeat password is not direct"
-            }
-        }
+    $("#logOutBtn").click(function() {
+        console.log(localStorage);
+        localStorage.clear();
+    
+        window.location.href = "./index.html";
     });
 });
