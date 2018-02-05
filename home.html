@@ -29,14 +29,20 @@
 			<h4>Action</h4>
 			<ul>
 				<li><a href="#">Refresh</a></li>
-				<li><a href="#">Add a new list</a></li>
-				<li><a href="#">Edit current list</a></li>
-				<li><a href="#">Share current list</a></li>
-				<li><a href="#">Delete current list</a></li>
+				<li><a id="addTitle" href="#">Add a new list title</a></li>
+				<li><a id="editTitle" href="#">Edit current list</a></li>
+				<li><a id="shareTitle" href="#">Share current list</a></li>
+				<li><a id="deleteTitle" href="#">Delete current list</a></li>
 			</ul>
+
+
 		</div>
 		<div class="col-md-9">
-			<div class="row">
+			<div id="todoListTitle">
+				
+			</div>
+
+			<!-- <div class="row">
 				<div class="col-md-6">
 					<div class="todolist not-done">
 						<h1>Todos</h1>
@@ -80,14 +86,18 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	
+	<div class="todoTitleList"></div>
+	
 
 	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/script.js"></script>
 	<script src="js/sign-in.js"></script>
 	<script src="js/home.js"></script>
+	<script src="js/logOut.js"></script>
 	
 </body>
 
