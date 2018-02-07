@@ -9,7 +9,7 @@ $(document).ready(function() {
 
             var request = $.ajax({
                 type: "POST",
-                url: "https://todo-js-be.herokuapp.com/auth",
+                url: "http://herokutuan.herokuapp.com/auth",
                 crossDomain: true,
                 data: {
                     "last_name": lastname_account,
@@ -31,7 +31,7 @@ $(document).ready(function() {
             });
         }
     });
-    
+
     $("#cancelbtn").click(function() {
         window.location.href = "./index.html";
     });

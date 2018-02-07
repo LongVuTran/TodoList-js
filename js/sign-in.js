@@ -1,12 +1,12 @@
-$(document).ready(function(){
-    $("#loginbtn").click(function(){
+$(document).ready(function() {
+    $("#loginbtn").click(function() {
         if ($("#loginForm").valid()) {
             var email_account = $("#email").val();
             var password_account = $("#password").val();
 
             var request = $.ajax({
                 type: "POST",
-                url: "https://todo-js-be.herokuapp.com/auth/sign_in",
+                url: "http://herokutuan.herokuapp.com/auth/sign_in",
                 data: {
                     "email": email_account,
                     "password": password_account
@@ -21,7 +21,7 @@ $(document).ready(function(){
                 // setCookie("uId", uId);
                 // setCookie("accessToken", accessToken);
                 // setCookie("client", client);
-                
+
                 localStorage.setItem('uId', uId);
                 localStorage.setItem('accessToken', accessToken)
                 localStorage.setItem('client', client);
@@ -29,7 +29,7 @@ $(document).ready(function(){
                 console.log(localStorage);
 
 
-                window.location.href = "./home.html"; 
+                window.location.href = "./home.html";
 
                 alert("Wellcome to TodoList!\nYou are login!");
                 console.log(data);
@@ -42,7 +42,7 @@ $(document).ready(function(){
             });
         }
     });
-    
+
     //direct to index.html
     $("#cancelbtn").click(function() {
         window.location.href = "./index.html";
@@ -52,7 +52,7 @@ $(document).ready(function(){
     $("#logOutBtn").click(function() {
         console.log(localStorage);
         localStorage.clear();
-    
+
         window.location.href = "./index.html";
     });
 });
