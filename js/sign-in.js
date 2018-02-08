@@ -33,8 +33,8 @@ $(document).ready(function() {
 
             request.fail(function(jqXHR, textStatus, errorThrown) {
                 console.log("error");
-                var error = jqXHR.responseJSON.errors[0];
-                alert(error);
+                //var error = jqXHR.responseJSON.errors[0];
+                //alert(error);
             });
         }
     });
