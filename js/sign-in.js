@@ -18,21 +18,17 @@ $(document).ready(function() {
                 var accessToken = jqXHR.getResponseHeader("Access-Token");
                 var client = jqXHR.getResponseHeader("Client");
 
-                // setCookie("uId", uId);
-                // setCookie("accessToken", accessToken);
-                // setCookie("client", client);
-
                 localStorage.setItem('uId', uId);
-                localStorage.setItem('accessToken', accessToken)
+                localStorage.setItem('accessToken', accessToken);
                 localStorage.setItem('client', client);
 
                 console.log(localStorage);
-
 
                 window.location.href = "./home.html";
 
                 alert("Wellcome to TodoList!\nYou are login!");
                 console.log(data);
+                getTaskTitle();
             });
 
             request.fail(function(jqXHR, textStatus, errorThrown) {
