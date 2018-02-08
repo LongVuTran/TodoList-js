@@ -3,7 +3,7 @@
  function getTaskTitle(data) {
      var requestTitle = $.ajax({
          type: "GET",
-         url: "http://herokutuan.herokuapp.com/task_lists",
+         url: "https://herokutuan.herokuapp.com/task_lists",
          headers: { 'access-token': localStorage.getItem('accessToken'), 'uid': localStorage.getItem('uId'), 'client': localStorage.getItem('client') },
      });
 

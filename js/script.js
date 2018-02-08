@@ -39,7 +39,7 @@ $(document).ready(function() {
         var id = $(this).attr("list-id");
         console.log(id);
         $.ajax({
-            url: "http://herokutuan.herokuapp.com/task_lists/" + id,
+            url: "https://herokutuan.herokuapp.com/task_lists/" + id,
             method: "PATCH",
             contentType: 'application/json',
             headers: { 'access-token': localStorage.getItem('accessToken'), 'uid': localStorage.getItem('uId'), 'client': localStorage.getItem('client') },
@@ -55,7 +55,7 @@ $(document).ready(function() {
         var deletePrompt = alert("Do you wanna delete title:");
         var id = $(this).attr("list-id");
         $.ajax({
-            url: "http://herokutuan.herokuapp.com/task_lists/" + id,
+            url: "https://herokutuan.herokuapp.com/task_lists/" + id,
             method: 'DELETE',
             headers: { 'access-token': localStorage.getItem('accessToken'), 'uid': localStorage.getItem('uId'), 'client': localStorage.getItem('client') }
         }).done(function(data, textStatus, jqXHR) {

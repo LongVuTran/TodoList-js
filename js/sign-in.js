@@ -6,7 +6,7 @@ $(document).ready(function() {
 
             var request = $.ajax({
                 type: "POST",
-                url: "http://herokutuan.herokuapp.com/auth/sign_in",
+                url: "https://herokutuan.herokuapp.com/auth/sign_in",
                 data: {
                     "email": email_account,
                     "password": password_account

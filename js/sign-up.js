@@ -9,7 +9,7 @@ $(document).ready(function() {
 
             var request = $.ajax({
                 type: "POST",
-                url: "http://herokutuan.herokuapp.com/auth",
+                url: "https://herokutuan.herokuapp.com/auth",
                 crossDomain: true,
                 data: {
                     "last_name": lastname_account,
