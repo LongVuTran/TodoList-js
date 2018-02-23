@@ -14,6 +14,9 @@ $(document).ready(function() {
         document.location.href = "./home.html";
     });
 
+    //getTaskTitle(data);
+
+
 
     //create title
     $('#addTitle').click(function() {
@@ -28,7 +31,7 @@ $(document).ready(function() {
             headers: { 'access-token': localStorage.getItem('accessToken'), 'uid': localStorage.getItem('uId'), 'client': localStorage.getItem('client') },
             data: JSON.stringify(listTitle)
         }).done(function(data, textStatus, jqXHR) {
-            $('.todoTitleList').append('<div class="todoList"><a href="#" class="titeTodo" list-id="' + data.id + '">' + data.name + '</a><a href="#" class="editTodoList" list-id="' + data.id + '"><i class="icon-edit"></i></a><a href="#" class="deleteTodoList" list-id="' + data.id + '"><i class="icon-trash"></i></a></div>');
+            $('.todoTitleList').append('<div class="todoList"><a href="#" class="titleTodo" list-id="' + data.id + '">' + data.name + '</a><a href="#" class="editTodoList" list-id="' + data.id + '"><i class="icon-edit"></i></a><a href="#" class="deleteTodoList" list-id="' + data.id + '"><i class="icon-trash"></i></a></div>');
         });
     });
 
@@ -65,5 +68,7 @@ $(document).ready(function() {
         });
     });
 
+
+    //task list
 
 });

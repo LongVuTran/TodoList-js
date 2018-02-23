@@ -9,9 +9,11 @@
 
      requestTitle.done(function(data, textStatus, jqXHR) {
          $('.todoTitleList').html("");
-         for (var i = 0; i < data.length; i++) {
+         for (var i = 1; i < data.length - 1; i++) {
              $('.todoTitleList').append('<div class="todoList"><a href="#" class="titeTodo" list-id="' + data[i].id + '">' + data[i].name + '</a><a href="#" class="editTodoList" list-id="' + data[i].id + '"><i class="icon-edit"></i></a><a href="#" class="deleteTodoList" list-id="' + data[i].id + '"><i class="icon-trash"></i></a></div>');
          }
+         //$('.todoTitleList').append('<div class="todoList"><a href="#" class="titleTodo" list-id="' + data.id + '">' + data.name + '</a><a href="#" class="editTodoList" list-id="' + data.id + '"><i class="icon-edit"></i></a><a href="#" class="deleteTodoList" list-id="' + data.id + '"><i class="icon-trash"></i></a></div>');
+
      });
 
      requestTitle.fail(function() {
@@ -30,10 +32,10 @@
      }
  }
 
- function updatePageTodo() {
+ //  function updatePageTodo() {
 
- }
+ //  }
 
- function updateTodoList() {
+ //  function updateTodoList() {
 
- }
+ //  }
