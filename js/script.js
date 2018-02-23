@@ -16,7 +16,11 @@ $(document).ready(function() {
 
     //getTaskTitle(data);
 
-
+    //refresh
+    $(document).on("click", "#refresh", function() {
+        var id = $(this).attr("list-id");
+        console.log(id);
+    })
 
     //create title
     $('#addTitle').click(function() {
