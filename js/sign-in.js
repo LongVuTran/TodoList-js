@@ -4,16 +4,14 @@ $(document).ready(function() {
             var email_account = $("#email").val();
             var password_account = $("#password").val();
 
-            var request = $.ajax({
+            $.ajax({
                 type: "POST",
                 url: "https://herokutuan.herokuapp.com/auth/sign_in",
                 data: {
                     "email": email_account,
                     "password": password_account
                 }
-            });
-
-            request.done(function(data, textStatus, jqXHR) {
+            }).done(function(data, textStatus, jqXHR) {
                 var uId = jqXHR.getResponseHeader("Uid");
                 var accessToken = jqXHR.getResponseHeader("Access-Token");
                 var client = jqXHR.getResponseHeader("Client");
@@ -29,9 +27,7 @@ $(document).ready(function() {
                 alert("Wellcome to TodoList!\nYou are login!");
                 console.log(data);
                 getTaskTitle();
-            });
-
-            request.fail(function(jqXHR, textStatus, errorThrown) {
+            }).fail(function(jqXHR, textStatus, errorThrown) {
                 console.log("error");
                 //var error = jqXHR.responseJSON.errors[0];
                 //alert(error);
