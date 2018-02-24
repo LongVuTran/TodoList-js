@@ -36,9 +36,21 @@
             <div class="todoTitleList"></div>
 
         </div>
-        <div class="col-md-9">
-            <div id="taskTodoList">
+        <div class="row col-md-9">
+            <div id="taskTodoList" class="col-md-6">
+                <h1>Todos</h1>
+                <input type="text" placeholder="Add Todo" class="form-control" id="inputTaskTodo">
+                <br>
+                <input type="button" value="Mark all as done" id="markAllDoneBtn">
+                <div id="markDone">
 
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Already done</h1>
+                <div id="alreadyDone">
+
+                </div>
             </div>
         </div>
     </div>

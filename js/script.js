@@ -75,4 +75,45 @@ $(document).ready(function() {
 
     //task list
 
+    //show task todo list
+    function showTaskTodoList() {
+        var listTaskId = $('#inputTaskTodo').attr('list-id');
+        $.ajax({
+            url: "https://todo-js-be.herokuapp.com/todo_lists/" + listTaskId + "/todos",
+            method: 'GET',
+            headers: { 'access-token': localStorage.getItem('accessToken'), 'uid': localStorage.getItem('uId'), 'client': localStorage.getItem('client') }
+        }).done(function(data, textStatus, jqXHR) {
+            $('#markDone').html("");
+            $('#alreadyDone').html("");
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].done == false) {
+                    $('#markDone').append('<div class="todo-item form-check"><label class="form-check-label"><input type="checkbox" class="form-check-input" todo-id="' + data[i].id + '">' + data[i].name + '</label></div>');
+                } else {
+                    $('#alreadyDone').append('<div class="todo-item form-check"><p><del>' + data[i].name + '</del></p><div class="btn-delete-todo" todo-id="' + data[i].id + '"><i class="far fa-window-close"></i></div></div>');
+                }
+            }
+        });
+    }
+
+    //create task todo list
+    $(document).on('keypress', '#inputTaskTodo', function() {
+        if (event.which === 13) {
+            var listTaskId = $(this).attr('list-id');
+            var taskTodoName = { name: $(this).val() };
+            $(this).val("");
+            console.log(listTaskId);
+            console.log(taskTodoName);
+            $.ajax({
+                url: "https://todo-js-be.herokuapp.com/todo_lists/" + listTaskId + "/todos",
+                method: 'POST',
+                contentType: 'application/json',
+                headers: { 'access-token': localStorage.getItem('accessToken'), 'uid': localStorage.getItem('uId'), 'client': localStorage.getItem('client') },
+                data: JSON.stringify(taskTodoName)
+            }).done(function(data, textStatus, jqXHR) {
+                console.log(data);
+                showTaskTodoList();
+            });
+        }
+    });
+
 });
